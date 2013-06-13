@@ -211,6 +211,8 @@ defining one of these options:
   - ``inline``: ``table|standard``, the fields are displayed into table
   - ``sortable``: if the model has a position field, you can enable a drag and
     drop sortable effect by setting ``sortable=field_name``
+  - ``limit``: ``<an integer>`` if defined, limits the number of elements that
+    can be added, after which the "Add new" button will not be displayed
 
 .. code-block:: php
 
@@ -234,7 +236,8 @@ defining one of these options:
                 ->add('galleryHasMedias', 'sonata_type_collection', array(), array(
                     'edit' => 'inline',
                     'inline' => 'table',
-                    'sortable'  => 'position'
+                    'sortable' => 'position',
+                    'limit' => 3
                 ))
             ;
         }
